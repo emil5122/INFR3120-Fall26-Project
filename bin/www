@@ -27,9 +27,6 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-
-require('../functionality/databaseConnect') // Runs the file to connect to the mongodb database.
-
 // removed port normalization function, uneeded. We will use port 3000.
 
 /**

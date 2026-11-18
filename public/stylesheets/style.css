@@ -56,14 +56,14 @@ body.home-page {
 .home-page .nav-links a{
   color: royalblue;
   text-decoration: none;
-  font-size 15px;
+  font-size: 15px;
 }
 
 .home-page .create-button {
   display: inline-block;
   background-color: royalblue;
   color: white;
-  padding; 20px 40px;
+  padding: 20px 40px;
   border-radius: 10px;
   text-decoration: none;
   font-size: 20px;

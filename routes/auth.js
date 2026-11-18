@@ -9,6 +9,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+//Showsmthe registration page
+router.get('/register', (req, res) => {
+    res.render('register');
+});
+
 // POST Routes
 // Used to create a new user, user must send desired username + password, then check db if username is taken.
 router.post('/register/newUser', (req, res) => {

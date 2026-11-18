@@ -3,8 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-require('dotenv').config(); // allows access to the .env file to retrieve credentials.
-const mongoose = require('mongoose') 
 
 
 var indexRouter = require('./routes/index');
@@ -29,15 +27,6 @@ app.use('/users', usersRouter);
 app.use('/', authRouter);
 app.use('/', groceryRouter);
 
-// Connect to mongoDB
-mongoose.connect(process.env.MONGODB_CONNECT) // start the connection with mongodb.
-let mongoDB = mongoose.connection // so the connection can be exported
-mongoDB.on('error', console.error.bind(console, 'mongodb connection error!!')) // notifies on error
-mongoDB.once('open', () =>{ // notifies once the mongodb connection is open.
-  console.log('connected to mongodb')
-})
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -55,4 +44,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-module.exports = mongoDB;

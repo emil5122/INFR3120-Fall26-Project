@@ -1,29 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Grosherey</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+<!-- START PAGE -->
 
   <body class ="home-page">
-    <nav class ="navbar">
-      <a href="/" class="brand">
-        <img src="/images/grosherey-logo.png" alt ="Grosherey Logo">
-        Grosherey
-      </a>
-
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/login">Login</a>
-        <a href="/register">Sign Up</a>
-      </div>
-    </nav>
 
     <h1>Your next stop, Groceries!</h1>
     <p> Easy access to your groceries, simplify your shopping</p>
     <a href="/dashboard" class="create-button">Create Your Grocery List</a>
-  </body>
-</html>
 
-
+<!-- END PAGE -->
+<%- include('partials/footer') %>

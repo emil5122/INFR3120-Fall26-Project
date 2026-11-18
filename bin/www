@@ -27,6 +27,8 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+require('./database') // start database
+
 // removed port normalization function, uneeded. We will use port 3000.
 
 /**

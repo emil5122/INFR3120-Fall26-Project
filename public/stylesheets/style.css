@@ -163,3 +163,97 @@ body.login-page {
 .error{
   color: #ff0000
 }
+
+/* GROCERY PAGES CSS */
+body.grocery-page {
+  margin: 5px;
+  padding: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: lightblue;
+  color: navy;
+  text-align: center;
+}
+.grocery-page .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 100px;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.grocery-page .brand {
+  font-size: 25px;
+  font-weight: bold;
+  color: royalblue;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grocery-page .brand img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.grocery-page .nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.grocery-page .nav-links a {
+  color: royalblue;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* Page title */
+.grocery-page h1 {
+  color: royalblue;
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+/* Text boxes */
+.grocery-page input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid royalblue;
+  border-radius: 6px;
+}
+
+
+.grocery-page input[type="number"] {
+  width: 60px;
+}
+.grocery-page button {
+  background-color: royalblue;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.grocery-page ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 30px auto;
+}
+.grocery-page li {
+  background-color: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.grocery-page li a {
+  color: royalblue;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}

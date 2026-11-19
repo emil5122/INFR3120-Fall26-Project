@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> Grocery Dashboard </title>
-    </head>
-    <body>
-        <h1> Grocery Dashboard </h1>
-        <p> Min please develop the grocery system here.</p>
-    </body>
-</html>
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+  <body class="grocery-page">
+
+    <h1>My Grocery Lists</h1>
+
+    <!-- Form to create a new list, sends listTitle to POST /lists -->
+
+    <form action="/lists" method="POST">
+      <input type="text" name="listTitle" placeholder="e.g. Weekly Groceries" required>
+      <button type="submit">Create List</button>
+    </form>
+
+    <!-- Show all of the user's lists -->
+
+    <% if (lists.length == 0) { %>
+      <p>You don't have any grocery lists yet. Simply Create one!</p>
+    <% } else { %>
+      <ul>
+        <% lists.forEach(function(list) { %>
+          <li>
+            <a href="/lists/<%= list._id %>"><%= list.listTitle %></a>
+            (<%= list.listItems.length %> items)
+            <form action="/lists/<%= list._id %>/delete" method="POST" style="display:inline">
+              <button type="submit">Delete</button>
+            </form>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+<%- include('partials/footer') %>

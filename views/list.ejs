@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+  <body class="grocery-page">
+
+    <a href="/dashboard">&larr; Back to my lists</a>
+    <h1><%= list.listTitle %></h1>
+
+    <!-- Form to add an item, sends itemName + quantity to POST /lists/:id/items -->
+
+    <form action="/lists/<%= list._id %>/items" method="POST">
+      <input type="text" name="itemName" placeholder="Item name" required>
+      <input type="number" name="quantity" value="1" min="1" required>
+      <button type="submit">Add Item</button>
+    </form>
+
+    <!-- Show each item. Change the name,quantity and click Save to edit -->
+
+    <% if (list.listItems.length == 0) { %>
+      <p>No items yet. Add one above!</p>
+    <% } else { %>
+      <ul>
+        <% list.listItems.forEach(function(item) { %>
+          <li>
+            <form action="/lists/<%= list._id %>/items/<%= item._id %>/edit" method="POST" style="display:inline">
+              <input type="text" name="itemName" value="<%= item.itemName %>" required>
+              <input type="number" name="quantity" value="<%= item.quantity %>" min="1" required>
+              <button type="submit">Save</button>
+            </form>
+            <form action="/lists/<%= list._id %>/items/<%= item._id %>/delete" method="POST" style="display:inline">
+              <button type="submit">Delete</button>
+            </form>
+          </li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+
+<%- include('partials/footer') %>

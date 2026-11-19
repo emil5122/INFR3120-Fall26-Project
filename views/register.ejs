@@ -1,8 +1,29 @@
 <%- include('partials/header') %>
 <%- include('partials/nav') %>
 <!-- START PAGE -->
-    <body  class ="home-page">
-        <h1>Register Page</h1>
-        <p> Emil please develop the login system here.</p>
+    <body class ="login-page">
+        <div>
+            <h1 class="login-texttitle">Register</h1>
+            <a>Welcome to the register page, if you already have account login </a><a class="special-link" href="/login">here.</a>
+
+             <form action="/auth/register/newUser" method="post" enctype="application/x-www-form-urlencoded" name="loginForm"> <!-- Sends to login endpoint. -->
+                <p>
+                    <label for="UserUsername">Username</label><br>
+                    <input id="UserUsername" type="text" name="UserUsername" size="32" required> 
+                </p>
+                <p>
+                    <label for="UserPassword">Password</label><br>
+                    <input id="UserPassword" type="password" name="UserPassword" size="32" required>  
+                </p>
+                <p><input type="submit" value="Submit"></p>
+            </form>
+            <!-- Displays login errors -->
+             <% if(error !== "none") {%> 
+                  <a class="error"><%= error %></a>
+                <% } else { %>
+                  <a></a> <!-- No error to display. -->
+             <% } %>
+            
+        </div>
 <!-- END PAGE -->
 <%- include('partials/footer') %>

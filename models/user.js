@@ -1,8 +1,8 @@
 const {default: mongoose, Collection} = require('mongoose')
 
 let userModel = mongoose.Schema({
-    username: String,
-    passwordHash: String,
+    username: {type: String, required: true, unique: true}, // usernames must be unique and are required.
+    passwordHash: {type: String, required: true}, // passwords would be bad if they were unique, but they are required.
     groceryList: [] // This is where all the grocery lists will go.
 })
 

@@ -75,3 +75,91 @@ body.home-page {
   height: 80px;
   object-fit: contain;
 }
+
+/* LOGIN PAGE CSS */
+body.home-page {
+  margin: 5px;
+  padding: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: lightblue;
+  color: navy;
+  text-align: center;
+}
+
+.login-page h1 {
+  color: royalblue;
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+.login-page p {
+  font-size: 20px;
+  color: grey;
+
+}
+
+.login-page .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 100px;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+body.login-page {
+  margin: 5px;
+  padding: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: lightblue;
+  color: navy;
+  text-align: center;
+}
+
+.login-page .brand {
+  font-size : 25px;
+  font-weight: bold;
+  color: royalblue;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-page .nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.login-page .nav-links a{
+  color: royalblue;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.login-page .create-button {
+  display: inline-block;
+  background-color: royalblue;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 25px;
+}
+
+.login-page .brand img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.special-link{
+  color: #ffffff
+}
+
+
+.error{
+  color: #ff0000
+}

@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+<!-- START PAGE -->
+    <body class ="login-page">
+        <div>
+            <h1 class="login-texttitle">Logout</h1>
+            <a>Press to logout.</a>
+
+             <form action="/auth/logout" method="post" enctype="application/x-www-form-urlencoded" name="logoutForm"> <!-- Sends to logout endpoint. -->
+                <p><input type="submit" value="Logout"></p>
+            </form>
+            <!-- Displays login errors -->
+             <% if(error !== "none") {%> 
+                  <a class="error"><%= error %></a>
+                <% } else { %>
+                  <a></a> <!-- No error to display. -->
+             <% } %>
+            
+        </div>
+<!-- END PAGE -->
+<%- include('partials/footer') %>

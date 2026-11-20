@@ -31,7 +31,7 @@ app.use(session({
   saveUninitialized:false,
 }));
 
-app.use((req,res,next) =>{
+app.use((req,res,next) =>{ // Debug information regarding sessions.
   console.log(req.path,'session:',req.session,'cookie: ',req.headers.cookie)
   next();
 })

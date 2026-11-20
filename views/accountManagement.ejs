@@ -6,7 +6,7 @@
             <h1 class="login-texttitle">Password Reset/Account Maintenance</h1>
             <a>This page allows you to reset your password or delete your account.</a><br>
             <a>To reset your password, enter your username, password and new password.</a>
-             <form action="/auth/register/updateUser" method="post" enctype="application/x-www-form-urlencoded" name="loginForm"> <!-- Sends to login endpoint. -->
+             <form action="/auth/register/updateUser" method="post" enctype="application/x-www-form-urlencoded" name="resetForm"> <!-- Sends to login endpoint. -->
                 <p>
                     <label for="UserUsername">Username</label><br>
                     <input id="UserUsername" type="text" name="UserUsername" size="32" required> 
@@ -16,14 +16,14 @@
                     <input id="UserPassword" type="password" name="UserPassword" size="32" required>  
                 </p>
                 <p>
-                    <label for="newPassword">New Password</label><br>
-                    <input id="newPassword" type="password" name="newPassword" size="32" required>  
+                    <label for="NewUserPassword">New Password</label><br>
+                    <input id="NewUserPassword" type="password" name="NewUserPassword" size="32" required>  
                 </p>
                 <p><input type="submit" value="Reset"></p>
             </form>
             <!-- Displays reset errors -->
              <% if(passResetError !== "none") {%> 
-                  <a class="error"><%= error %></a>
+                  <a class="error"><%= passResetError %></a>
                 <% } else { %>
                   <a></a> <!-- No error to display. -->
              <% } %>
@@ -31,7 +31,7 @@
             <h1>Account Deletion</h1>
             <a>Enter username and password to delete account.</a><br>
             <a class="error">YOU CANNOT UNDO THIS.</a>
-             <form action="/auth/register/deleteUser" method="post" enctype="application/x-www-form-urlencoded" name="loginForm"> <!-- Sends to login endpoint. -->
+             <form action="/auth/register/deleteUser" method="post" enctype="application/x-www-form-urlencoded" name="deleteForm"> <!-- Sends to login endpoint. -->
                 <p>
                     <label for="UserUsername">Username</label><br>
                     <input id="UserUsername" type="text" name="UserUsername" size="32" required> 
@@ -45,7 +45,7 @@
 
             <!-- Displays deletion errors -->
              <% if(deletionError !== "none") {%> 
-                  <a class="error"><%= error %></a>
+                  <a class="error"><%= deletionError %></a>
                 <% } else { %>
                   <a></a> <!-- No error to display. -->
              <% } %>
